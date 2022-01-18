@@ -1,0 +1,48 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://cdn.pixabay.com/photo/2014/10/14/20/24/the-ball-488713_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  button{
+  
+  
+      flex: 1 0 45%;
+      width: 200px;
+      height: 80px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      margin: .4rem;
+      outline: none;
+      background: #a9a4d1;
+      user-select: none;
+      font-weight: 600;
+      
+      
+  }
+  #question{
+    color: rgb(0, 0, 0);
+    
+  }
+  h1{
+    color: red;
+  }
+#guess0{
+  color: aqua;
+}
+#guess1{
+  color: aqua;
+}
+#guess2{
+  color: aqua;
+}
+#guess3{
+  color: aqua;
+}
