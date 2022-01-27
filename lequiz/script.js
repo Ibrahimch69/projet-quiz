@@ -1,47 +1,15 @@
- /* class Question {
-    constructor(text,choix,reponse){
-        this.text = text;
-        this.choix = choix;
-        this.reponse = reponse;
-    }
-    isCorrectAnswer(choix){
-        return this.reponse === choix;
-    }
-}
-let question =[
-       new Question("Qui e st le meilleur jouer de foot en 2014?",
-       ["messi()","ronaldo()","benzemz()","zidan()"],
-        "ronaldo()"),
-       new Question('qui est le meilleur buteur en 2021',
-    [  "kelyan()", "lewandowski()", "naymar()","messi()"],
-    "lewandowski()")
-];
-console.log(question); 
-
-class quiz{
-    constructor(question){
-        this.score=0; 
-        this.question=question;
-        this.currentQuestionsIndex =0;
-    }
-    getCurrentQuestion(){
-        return thiq.question[this.currentQuestionsIndex];
-        }
-    } */
-  
-          
-        
-    
-    class Question {
+        /*Ici j'ai Cree ma première class question ou y aurai mes question
+         qui sont contenue dans un Class ou y aura la question + le choix et la bonne réponse*/
+        class Question {
         constructor(text, choices, answer) {
           this.text = text;
           this.choices = choices;
           this.answer = answer;
-        }
+        } // j'ai utlise un founction qui si le choix qui a chosi est bon ses vrai 
         isCorrectAnswer(choice) {
           return this.answer === choice;
         }
-      }
+      } // ici ya tous mes objets question + le choix + la bonne réponse
       let questions = [
         new Question("Qui e st le meilleur jouer de foot en 2014?", ["messi","ronaldo","benzemz","zidan"],
         "ronaldo"),
@@ -57,7 +25,7 @@ class quiz{
       ];
       
       console.log(questions);
-      
+      // ici ses pour le score pour stock la bonne réponse
       class Quiz {
         constructor(questions) {
           this.score = 0;
@@ -66,19 +34,20 @@ class quiz{
         }
         getCurrentQuestion() {
           return this.questions[this.currentQuestionIndex];
-        }
+        } //pour vérifier la réponse si elle est vrai ou pas en rajoutan 1 si elle est vrai
         guess(answer) {
           if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
             this.score++;
           }
           this.currentQuestionIndex++;
-        }
+        } 
+        // la pour defenir la fin du quiz
         hasEnded() {
           return this.currentQuestionIndex >= this.questions.length;
         }
       }
       
-      // Regroup all  functions relative to the App Display
+      // Regrouper toutes les fonctions relatives à l'affichage des questions
       const display = {
         elementShown: function(id, text) {
           let element = document.getElementById(id);
@@ -102,7 +71,8 @@ class quiz{
               quizApp();
             }
           }
-          // display choices and handle guess
+          // 
+//afficher les choix et gérer les suppositions
           for(let i = 0; i < choices.length; i++) {
             this.elementShown("choice" + i, choices[i]);
             guessHandler("guess" + i, choices[i]);
